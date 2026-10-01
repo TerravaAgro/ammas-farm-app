@@ -1,0 +1,13 @@
+{
+  "appId": "com.ammasfarm.app",
+  "appName": "Amma's Farm",
+  "webDir": "www",
+  "backgroundColor": "#FCFBF7",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#FCFBF7"
+  },
+  "android": {
+    "backgroundColor": "#FCFBF7"
+  }
+}
