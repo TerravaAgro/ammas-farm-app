@@ -1,0 +1,70 @@
+name: Build Android app
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the files
+        uses: actions/checkout@v4
+
+      - name: Arrange the files
+        run: |
+          mkdir -p www/fonts assets
+          if [ -f index.html ]; then mv index.html www/; fi
+          for f in *.woff2; do if [ -e "$f" ]; then mv "$f" www/fonts/; fi; done
+          for f in icon-only.png icon-foreground.png icon-background.png splash.png splash-dark.png; do if [ -e "$f" ]; then mv "$f" assets/; fi; done
+          ls -R www assets
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install tools
+        run: npm install
+
+      - name: Create the Android project
+        run: npx cap add android
+
+      - name: Create app icons and splash screens
+        run: npx capacitor-assets generate --android --iconBackgroundColor '#F6EFE5' --splashBackgroundColor '#FCFBF7'
+
+      - name: Copy the app into the Android project
+        run: npx cap sync android
+
+      - name: Build the APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+          cp app/build/outputs/apk/debug/app-debug.apk ../AmmasFarm.apk
+
+      - name: Save the APK (Actions tab)
+        uses: actions/upload-artifact@v4
+        with:
+          name: AmmasFarm-APK
+          path: AmmasFarm.apk
+
+      - name: Publish the APK (Releases page)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Amma's Farm app, build ${{ github.run_number }}
+          body: Download AmmasFarm.apk on your Android phone and tap it to install.
+          files: AmmasFarm.apk
