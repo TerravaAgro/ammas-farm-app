@@ -640,6 +640,113 @@ fieldset.fld{border:0;margin:0;padding:0;min-width:0}
   .duo-card{padding:24px}
   .duo-card h3{font-size:1.6rem}
 }
+/* Farm admin */
+.page.page-admin{max-width:900px}
+.admin-conn{display:grid;gap:12px}
+.admin-conn ol{margin:0;padding-left:20px;line-height:1.7;color:var(--muted);font-size:.93rem}
+.admin-conn ol b{color:var(--ink)}
+.admin-conn .row-in{display:flex;gap:8px;flex-wrap:wrap}
+.admin-conn .row-in .inp{flex:1;min-width:200px}
+.conn-ok{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--sage-deep);font-weight:600}
+.conn-ok .ic{color:#2F9E55}
+.conn-ok .muted{color:var(--muted);font-weight:400;font-size:.9rem}
+.admin-err{color:var(--tomato);font-size:.88rem;font-weight:500;margin:0}
+.admin-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0 6px}
+.admin-tools .search{flex:1;min-width:220px;height:46px}
+.admin-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:16px}
+.admin-sum>div{background:var(--surface);padding:14px 16px}
+.admin-sum b{display:block;font-family:var(--serif);font-size:1.9rem;line-height:1;color:var(--sage-deep);font-weight:600}
+.admin-sum span{display:block;margin-top:4px;color:var(--muted);font-size:.84rem}
+.admin-sum .is-out b{color:var(--tomato)}
+.admin-list{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.admin-group{padding:10px 16px;background:var(--surface-2);border-top:1px solid var(--line);font-size:.82rem;font-weight:700;color:var(--muted)}
+.admin-group:first-child{border-top:0}
+.arow{display:grid;grid-template-columns:48px minmax(0,1fr) 96px 58px;gap:12px;align-items:center;padding:10px 16px;border-top:1px solid var(--line)}
+.admin-group+.arow{border-top:0}
+.arow.changed{background:var(--brass-soft)}
+.arow .tile{border-radius:10px;aspect-ratio:1}
+.arow .tile svg{width:92%}
+.anm{min-width:0}
+.anm b{display:block;font-size:.95rem;font-weight:600;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anm small{display:block;color:var(--muted);font-size:.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anm .st{display:inline-block;margin-top:3px;font-size:.74rem;font-weight:700;padding:2px 8px;border-radius:999px;background:#E3F3E7;color:#1F7A3D}
+.anm .st.out{background:#FBE6E2;color:var(--tomato)}
+.aprice{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);height:40px;padding:0 8px;gap:2px}
+.aprice:focus-within{border-color:var(--sage);box-shadow:0 0 0 3px rgba(91,121,84,.14)}
+.aprice span{color:var(--muted);font-weight:600}
+.aprice input{border:0;background:transparent;width:100%;min-width:0;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums;outline:none;-moz-appearance:textfield}
+.aprice input::-webkit-outer-spin-button,.aprice input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.aprice.bad{border-color:var(--tomato)}
+.aswitch{position:relative;display:block;width:52px;height:30px;cursor:pointer}
+.aswitch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.aswitch .sw{position:absolute;inset:0;border-radius:999px;background:#D9897A;transition:background .2s}
+.aswitch .sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}
+.aswitch input:checked+.sw{background:#2F9E55}
+.aswitch input:checked+.sw::after{transform:translateX(22px)}
+.aswitch input:focus-visible+.sw{outline:2px solid var(--brass);outline-offset:3px}
+.admin-bar{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);margin-top:16px;z-index:25;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--sage-deep);color:#fff;border-radius:20px;padding:12px 12px 12px 18px;box-shadow:0 12px 30px rgba(20,40,20,.25)}
+.admin-bar .cnt{flex:1;min-width:120px;font-weight:600}
+.admin-bar .cnt small{display:block;font-weight:400;opacity:.8;font-size:.8rem}
+.admin-bar .btn{height:42px}
+.admin-bar .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.admin-bar .btn-primary{background:#fff;color:var(--sage-deep)}
+.admin-bar .btn-primary:disabled{opacity:.6}
+.admin-empty{padding:28px 16px;text-align:center;color:var(--muted)}
+html.view-admin .toast{bottom:calc(env(safe-area-inset-bottom,0px) + 110px)}
+.site .admin-link{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:720px){
+  .arow{grid-template-columns:40px minmax(0,1fr) 82px 52px;gap:8px;padding:10px 12px}
+  .admin-group{padding:9px 12px}
+  .admin-sum b{font-size:1.6rem}
+  .admin-sum>div{padding:12px}
+  .admin-bar{bottom:calc(var(--tabbar) + env(safe-area-inset-bottom,0px) + 10px)}
+  .admin-bar .btn{flex:1}
+  html.view-admin .toast{bottom:calc(var(--tabbar) + env(safe-area-inset-bottom,0px) + 150px)}
+}
+.seg{display:flex;gap:4px;margin:22px 0 4px;padding:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;overflow-x:auto;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{flex:1 0 auto;height:40px;padding:0 16px;border:0;border-radius:999px;background:transparent;font-weight:600;font-size:.92rem;color:var(--muted);white-space:nowrap}
+.seg button[aria-selected="true"]{background:var(--sage-deep);color:#fff}
+.admin-hint{margin:6px 0 0;color:var(--muted);font-size:.88rem;line-height:1.5}
+.prow{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 16px;border-top:1px solid var(--line)}
+.admin-group+.prow{border-top:0}
+.prow .tile{border-radius:10px;aspect-ratio:1}
+.prow .tile svg{width:92%}
+.anm .tags{display:flex;gap:4px;flex-wrap:wrap}
+.anm .st.new{background:var(--brass-soft);color:var(--brass)}
+.tile .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.pe-photo{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+.pe-photo .tile{border-radius:14px;aspect-ratio:1}
+.pe-photo .tile svg{width:90%}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.pe-file{position:relative;overflow:hidden;cursor:pointer}
+.pe-file input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.pe-file.is-off{opacity:.5;cursor:not-allowed}
+.pe-foot{display:flex;gap:10px}
+.pe-foot .btn{flex:1}
+.btn.danger{border-color:var(--tomato);color:var(--tomato)}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.aform .about-block{margin:16px 0 0}
+.aform .about-block .fld+.fld,.aform .about-block .row2+.fld,.aform .about-block .row3+.fld{margin-top:14px}
+.slotrow{margin-bottom:8px}
+.daygrid{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:720px){
+  .row3{grid-template-columns:1fr}
+  .prow{grid-template-columns:40px minmax(0,1fr) auto;gap:8px;padding:10px 12px}
+  .seg{border-radius:16px}
+  .slotrow{grid-template-columns:1fr 1fr}
+}
+
+/* admin login */
+.page-admin.locked .lede,.page-admin.locked #adminConn,.page-admin.locked #adminTabs,.page-admin.locked #adminPanel,.page-admin.locked #adminBar{display:none!important}
+.admin-login{max-width:440px;margin:8px 0 24px}
+.admin-login h2{margin:0 0 4px}
+.admin-login .btn-block{width:100%;margin-top:6px}
+.pwrow{display:flex;gap:8px;align-items:center}.pwrow .inp{flex:1;min-width:0}
+.admin-who{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 14px;font-size:.92rem;color:var(--sage-deep)}
+.admin-who .btn{margin-left:auto}
+#loginChange .btn{margin-top:4px}
+.admin-login .muted,#loginChange .muted{color:var(--muted);margin:0 0 12px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
 /* Hover effects only where a real pointer hovers (prevents sticky hover on iOS/Android) */
@@ -791,7 +898,7 @@ input[type="search"]{-webkit-appearance:none;appearance:none}
       </section>
 
       <div class="duo">
-        <div class="duo-card"><span class="ic-lg" data-ic3="pin"></span><h3>Visit the farm</h3><p>Open every Saturday and Sunday. Seed sowing for kids, silent therapy for elders, self-harvesting for everyone, and dinner by the bonfire in winter.</p><a class="btn btn-primary" href="#visit">Plan your visit</a></div>
+        <div class="duo-card"><span class="ic-lg" data-ic3="pin"></span><h3>Visit the farm</h3><p>Open every <span data-vd="and">Saturday and Sunday</span>. Seed sowing for kids, silent therapy for elders, self-harvesting for everyone, and dinner by the bonfire in winter.</p><a class="btn btn-primary" href="#visit">Plan your visit</a></div>
         <div class="duo-card" id="reviewsCard"><span class="ic-lg" data-ic3="star"></span><h3>What families say</h3><p>Read what our customers say about the produce, or leave a review after your delivery.</p><a class="btn btn-line" id="reviewsBtn" target="_blank" rel="noopener noreferrer">Read our Google reviews</a></div>
       </div>
 
@@ -848,14 +955,14 @@ input[type="search"]{-webkit-appearance:none;appearance:none}
       </section>
 
       <div class="duo">
-        <div class="duo-card"><span class="ic-lg" data-ic3="pin"></span><h3>See it for yourself</h3><p>Open every Saturday and Sunday. We'll explain every tree and vegetable, and everything we know about organic farming and kitchen gardening.</p><a class="btn btn-primary" href="#visit">Plan your visit</a></div>
+        <div class="duo-card"><span class="ic-lg" data-ic3="pin"></span><h3>See it for yourself</h3><p>Open every <span data-vd="and">Saturday and Sunday</span>. We'll explain every tree and vegetable, and everything we know about organic farming and kitchen gardening.</p><a class="btn btn-primary" href="#visit">Plan your visit</a></div>
         <div class="duo-card"><span class="ic-lg" data-ic3="basket"></span><h3>Taste the difference</h3><p>Everything in the shop is harvested the evening before delivery.</p><a class="btn btn-line" href="#shop">Shop the harvest</a></div>
       </div>
     </section>
 
     <section id="view-visit" class="page page-visit" aria-labelledby="visitTitle" hidden>
       <h1 class="display" id="visitTitle">Visit Amma's Farm</h1>
-      <div class="open-pills"><span class="open-pill" data-ic4="calendar">Open every Saturday and Sunday</span><span class="open-pill" data-ic4="pin">Sedfa, near Kadi</span><span class="open-pill" data-ic4="chat">Book on WhatsApp</span></div>
+      <div class="open-pills"><span class="open-pill" data-ic4="calendar"><span>Open every <span data-vd="and">Saturday and Sunday</span></span></span><span class="open-pill" data-ic4="pin">Sedfa, near Kadi</span><span class="open-pill" data-ic4="chat">Book on WhatsApp</span></div>
       <p class="lede">Spend a weekend day on a living, <span data-cert="adjlow">certified organic</span> farm. Sow seeds with your children, sit quietly among the trees, harvest your own vegetables, and learn everything we know about growing food.</p>
       <div class="visit-photos" id="visitPhotos"></div>
 
@@ -866,7 +973,7 @@ input[type="search"]{-webkit-appearance:none;appearance:none}
       <div class="about-block">
         <h2 class="display">Good to know</h2>
         <dl class="kv">
-          <dt>Days</dt><dd>Saturdays and Sundays, by appointment</dd>
+          <dt>Days</dt><dd><span data-vd="pl">Saturdays and Sundays</span>, by appointment</dd>
           <dt>Where</dt><dd>Sedfa village, near Kadi, Mehsana district</dd>
           <dt>Booking</dt><dd>Send a request here. We confirm the timing and share directions on WhatsApp.</dd>
           <dt>Winter evenings</dt><dd>Dinner and bonfire events run in the winter months</dd>
@@ -904,7 +1011,7 @@ input[type="search"]{-webkit-appearance:none;appearance:none}
       </div>
       <div class="about-block">
         <h2 class="display">Visit the farm</h2>
-        <p>Open every Saturday and Sunday, by appointment, at Sedfa village near Kadi. Seed sowing for kids, silent therapy for elders, self-harvesting, guided farm walks and kitchen gardening know-how, plus dinner and bonfire evenings in winter.</p>
+        <p>Open every <span data-vd="and">Saturday and Sunday</span>, by appointment, at Sedfa village near Kadi. Seed sowing for kids, silent therapy for elders, self-harvesting, guided farm walks and kitchen gardening know-how, plus dinner and bonfire evenings in winter.</p>
         <p style="margin-top:14px"><a class="btn btn-primary btn-sm" href="#visit">Plan your visit</a></p>
       </div>
       <div class="about-block">
@@ -917,9 +1024,23 @@ input[type="search"]{-webkit-appearance:none;appearance:none}
       </div>
     </section>
 
+    <section id="view-admin" class="page page-admin" aria-labelledby="adminTitle" hidden>
+      <h1 class="display" id="adminTitle">Farm admin</h1>
+      <div id="adminLogin"></div>
+      <p class="lede">Manage the whole app from here: stock and prices, products and photos, delivery and visit settings, and the home page. Publish, and customers see the changes in the app and on the website within a few minutes.</p>
+      <div class="about-block admin-conn" id="adminConn"></div>
+      <div class="seg" id="adminTabs" role="tablist" aria-label="Admin sections"></div>
+      <div id="adminPanel"></div>
+      <div class="admin-bar" id="adminBar" hidden>
+        <span class="cnt" id="adminCnt"></span>
+        <button type="button" class="btn btn-line btn-sm" id="adminDiscard">Discard</button>
+        <button type="button" class="btn btn-primary btn-sm" id="adminPublish">Publish to customers</button>
+      </div>
+    </section>
+
     <footer class="site">
       <span>© <span id="yr"></span> Amma's Farm, Sedfa, Kadi, Gujarat · <span id="certFoot">Registered with GOPCA</span></span>
-      <span>Prices follow the season and may change without notice.</span>
+      <span>Prices follow the season and may change without notice. <a class="admin-link" href="#admin">Farm admin</a></span>
     </footer>
   </div>
 </main>
@@ -957,8 +1078,9 @@ input[type="search"]{-webkit-appearance:none;appearance:none}
    FARM SETTINGS: update these before sharing the app
    ========================================================= */
 const CONFIG = {
-  whatsapp: "",            // Farm WhatsApp number, digits only with country code, e.g. "919876543210"
-  phone: "",               // Farm phone number to show on the About page, e.g. "+91 98765 43210"
+  whatsapp: "919977104545",   // Farm WhatsApp: every order and visit request opens a chat with this number
+  phone: "+91 99771 04545",   // Shown on the About page as a call button
+  stockSource: { owner: "TerravaAgro", repo: "ammas-farm-app", branch: "main", path: "app-data.json" }, // Live app data (stock, products, settings, home text) written by the Farm admin page
   googleReviews: "https://share.google/CO0bYnW7S1mTC3PCm",  // Google Business Profile link; leave empty to hide the reviews card
   cutoffHour: 20,          // Orders placed before this hour (24 h) are delivered the next day
   minOrder: 249,
@@ -1314,11 +1436,16 @@ function boxArt(p) {
     `<path d="${weave}M33 88H167M36 100H164M39 112H161" fill="none" stroke="#BC8E55" stroke-width="1.5" stroke-linecap="round"/>` +
     `<rect x="20" y="68" width="160" height="12" rx="6" fill="#B58C57"/><rect x="28" y="70" width="144" height="3" rx="1.5" fill="#fff" opacity=".25"/></svg>`;
 }
+const FALLBACK_ART = () => St("M60 86V50", "#5E8A45", 3) + `<g transform="translate(60 60) rotate(-38)">${Pa("M0 0C-8-16-3-32 14-38 16-22 11-7 0 0Z", "#4F8A3A")}</g><g transform="translate(60 52) rotate(36)">${Pa("M0 0C-8-16-3-32 14-38 16-22 11-7 0 0Z", "#6DAA4E")}</g>` + Pa("M36 86C40 76 80 76 84 86Z", "#8C6A45");
+function drawing(p) {
+  if (p && p.cat === "box" && p.box) return boxArt(p);
+  const k = p && ART_KEY[p.id];
+  return `<svg viewBox="0 0 120 96" aria-hidden="true" focusable="false"><ellipse cx="60" cy="87" rx="34" ry="4.5" fill="#26351f" opacity=".13"/>${k && ART[k] ? ART[k]() : FALLBACK_ART()}</svg>`;
+}
 function art(id) {
-  if (!artCache[id]) {
-    const p = BY_ID[id];
-    artCache[id] = p && p.cat === "box" ? boxArt(p) : `<svg viewBox="0 0 120 96" aria-hidden="true" focusable="false"><ellipse cx="60" cy="87" rx="34" ry="4.5" fill="#26351f" opacity=".13"/>${ART[ART_KEY[id]]()}</svg>`;
-  }
+  const p = BY_ID[id];
+  if (p && p.photo) return `<img class="ph-img" src="${esc(rawUrl(p.photo))}" alt="" loading="lazy" decoding="async">`;
+  if (!artCache[id]) artCache[id] = drawing(p || { id });
   return artCache[id];
 }
 
@@ -1459,9 +1586,604 @@ function durationLabel(ms) {
   return h ? `${h} h ${m} min` : `${m} min`;
 }
 
+/* ---------------- Live app data (everything the Farm admin page can change) ---------------- */
+const SRC = CONFIG.stockSource;
+const SETTING_KEYS = ["whatsapp", "phone", "deliveryFee", "freeDeliveryAbove", "minOrder", "cutoffHour", "slots", "pincodePrefixes", "visitDays", "winterMonths"];
+const clone = v => JSON.parse(JSON.stringify(v));
+const CONFIG_BASE = clone(Object.fromEntries(SETTING_KEYS.map(k => [k, CONFIG[k]])));
+const BADGES = ["", "In season", "Limited", "New"];
+const ALL_PRODUCTS = PRODUCTS.slice();
+ALL_PRODUCTS.forEach(p => { p.base = { name: p.name, local: p.local, unit: p.unit, desc: p.desc, store: p.store, price: p.price, badge: p.status === "out" ? "" : p.status, outDefault: p.status === "out", hidden: false, photo: "" }; });
+const rawUrl = path => `https://raw.githubusercontent.com/${SRC.owner}/${SRC.repo}/${SRC.branch}/${path}`;
+const dataRawUrl = () => rawUrl(SRC.path) + `?v=${Math.floor(Date.now() / 60000)}`;
+const HOME = { title: "", text: "", announcements: [] };
+let appData = store.get("appdata", null); // last published data, so the app opens correctly even offline
+const cleanStr = (v, max) => typeof v === "string" ? v.replace(/\s+/g, " ").trim().slice(0, max) : "";
+const validPrice = v => Number.isFinite(v) && v > 0 && v <= 100000;
+const validPhoto = v => typeof v === "string" && /^images\/[A-Za-z0-9_-]+\.(jpe?g|png|webp)$/.test(v);
+const validId = v => typeof v === "string" && /^c_[a-z0-9]{4,24}$/.test(v);
+const SHOP_CATS = () => CATEGORIES.filter(c => c.id !== "box");
+function customBase(c) {
+  return { name: cleanStr(c.name, 60), local: cleanStr(c.local, 40), unit: cleanStr(c.unit, 40) || "1 pc", desc: cleanStr(c.desc, 400), store: cleanStr(c.store, 200),
+    price: validPrice(c.price) ? Math.round(c.price) : 1, badge: BADGES.includes(c.status) ? c.status : "", outDefault: c.out === true, hidden: c.hidden === true, photo: validPhoto(c.photo) ? c.photo : "" };
+}
+function validCustom(c) { return !!(c && validId(c.id) && SHOP_CATS().some(k => k.id === c.cat) && cleanStr(c.name, 60).length >= 2); }
+// Product as it should appear, given a product's built-in values and the admin overrides
+function effective(p, items) {
+  const b = p.base, o = (!p.custom && items && items[p.id]) || {};
+  const str = (k, max, allowEmpty) => typeof o[k] === "string" && (allowEmpty || o[k].trim()) ? cleanStr(o[k], max) : b[k];
+  const out = o.out === true ? true : o.out === false ? false : b.outDefault;
+  return {
+    name: str("name", 60), local: str("local", 40, true), unit: str("unit", 40), desc: str("desc", 400, true), store: str("store", 200, true),
+    price: validPrice(o.price) ? Math.round(o.price) : b.price,
+    badge: BADGES.includes(o.status) ? o.status : b.badge,
+    out, outLabel: out ? (o.out === true || p.custom ? "Out of stock" : "Out of season") : "",
+    hidden: typeof o.hidden === "boolean" ? o.hidden : b.hidden,
+    photo: o.photo !== undefined ? (validPhoto(o.photo) ? o.photo : "") : b.photo
+  };
+}
+function sanitizeSettings(s) {
+  const n = clone(CONFIG_BASE); s = s || {};
+  if (/^91[6-9]\d{9}$/.test(s.whatsapp)) n.whatsapp = s.whatsapp;
+  if (typeof s.phone === "string" && (s.phone === "" || /^\+?[\d\s-]{10,16}$/.test(s.phone))) n.phone = s.phone.trim();
+  const int = (v, lo, hi) => Number.isInteger(v) && v >= lo && v <= hi;
+  if (int(s.deliveryFee, 0, 1000)) n.deliveryFee = s.deliveryFee;
+  if (int(s.freeDeliveryAbove, 0, 100000)) n.freeDeliveryAbove = s.freeDeliveryAbove;
+  if (int(s.minOrder, 0, 100000)) n.minOrder = s.minOrder;
+  if (int(s.cutoffHour, 1, 23)) n.cutoffHour = s.cutoffHour;
+  if (Array.isArray(s.slots) && s.slots.length >= 1 && s.slots.length <= 3 && s.slots.every(x => x && cleanStr(x.name, 30) && cleanStr(x.time, 30)))
+    n.slots = s.slots.map((x, i) => ({ id: ["am", "pm", "ev"][i], name: cleanStr(x.name, 30), time: cleanStr(x.time, 30) }));
+  if (Array.isArray(s.pincodePrefixes) && s.pincodePrefixes.length >= 1 && s.pincodePrefixes.length <= 30 && s.pincodePrefixes.every(x => /^\d{3,6}$/.test(x))) n.pincodePrefixes = [...new Set(s.pincodePrefixes)];
+  if (Array.isArray(s.visitDays) && s.visitDays.length >= 1 && s.visitDays.every(d => int(d, 0, 6))) n.visitDays = [...new Set(s.visitDays)];
+  if (Array.isArray(s.winterMonths) && s.winterMonths.every(m => int(m, 1, 12))) n.winterMonths = [...new Set(s.winterMonths)];
+  return n;
+}
+function sanitizeHome(h) {
+  h = h || {};
+  return { title: cleanStr(h.title, 80), text: cleanStr(h.text, 320), announcements: (Array.isArray(h.announcements) ? h.announcements : []).map(a => cleanStr(a, 90)).filter(Boolean).slice(0, 6) };
+}
+const artCacheReset = () => { Object.keys(artCache).forEach(k => delete artCache[k]); };
+function applyData(doc) {
+  doc = doc || {};
+  for (let i = ALL_PRODUCTS.length - 1; i >= 0; i--) if (ALL_PRODUCTS[i].custom) { delete BY_ID[ALL_PRODUCTS[i].id]; ALL_PRODUCTS.splice(i, 1); }
+  (Array.isArray(doc.custom) ? doc.custom : []).forEach(c => {
+    if (!validCustom(c) || BY_ID[c.id]) return;
+    const p = { id: c.id, cat: c.cat, custom: true, base: customBase(c) };
+    ALL_PRODUCTS.push(p); BY_ID[p.id] = p;
+  });
+  ALL_PRODUCTS.forEach(p => {
+    const e = effective(p, doc.items);
+    Object.assign(p, { name: e.name, local: e.local, unit: e.unit, desc: e.desc, store: e.store, price: e.price, hidden: e.hidden, photo: e.photo, outLabel: e.outLabel, badge: e.badge, status: e.out ? "out" : e.badge });
+  });
+  ALL_PRODUCTS.forEach(p => { if (p.box) p.worth = p.box.reduce((a, [id, q]) => a + BY_ID[id].price * q, 0); });
+  PRODUCTS.length = 0; ALL_PRODUCTS.forEach(p => { if (!p.hidden) PRODUCTS.push(p); });
+  Object.assign(CONFIG, sanitizeSettings(doc.settings));
+  Object.assign(HOME, sanitizeHome(doc.home));
+  artCacheReset();
+}
+applyData(appData);
+const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+function daysList(join, plural) {
+  const ds = [1, 2, 3, 4, 5, 6, 0].filter(d => CONFIG.visitDays.includes(d)).map(d => DAY_NAMES[d] + (plural ? "s" : ""));
+  return ds.length <= 1 ? (ds[0] || "") : ds.slice(0, -1).join(", ") + ` ${join} ` + ds[ds.length - 1];
+}
+let homeDefaults = null;
+function applyHomeAndText() {
+  const h1 = $(".hero h1"), hp = $(".hero-text > p");
+  if (!homeDefaults) homeDefaults = { title: h1.innerHTML, text: hp.innerHTML };
+  if (HOME.title) h1.textContent = HOME.title; else h1.innerHTML = homeDefaults.title;
+  if (HOME.text) hp.textContent = HOME.text; else hp.innerHTML = homeDefaults.text;
+  document.querySelectorAll("[data-vd]").forEach(el => { el.textContent = el.dataset.vd === "or" ? daysList("or") : el.dataset.vd === "pl" ? daysList("and", true) : daysList("and"); });
+  const fee = $("#feeFact"); if (fee) fee.textContent = CONFIG.deliveryFee ? `Delivery ${inr(CONFIG.deliveryFee)}, free above ${inr(CONFIG.freeDeliveryAbove)}` : "Free delivery";
+}
+function validData(doc) { return !!(doc && typeof doc === "object" && (doc.items === undefined || typeof doc.items === "object")); }
+function useData(doc) {
+  appData = doc; store.set("appdata", doc); applyData(doc);
+  const removed = [];
+  for (const id of Object.keys(cart)) { const p = BY_ID[id]; if (!p || p.hidden || isOut(p)) { if (p) removed.push(p.name); delete cart[id]; } }
+  store.set("cart", cart);
+  applyHomeAndText(); applyCertState(); anncIdx = 0; $("#anncText").textContent = announcements()[0];
+  renderChips(); renderCatalog(); updateBasketUI(); updateSchedule();
+  if (view === "about") renderAbout();
+  if (view === "farm") renderLibrary();
+  if (view === "visit" && $("#visitForm")) renderVisitForm();
+  if (dlgMode === "basket") renderBasket();
+  if (removed.length) toast(`${removed.join(", ")} just went out of stock and ${removed.length > 1 ? "were" : "was"} removed from your basket`);
+}
+async function refreshStock() {
+  if (view === "admin") return;
+  try {
+    const r = await fetch(dataRawUrl(), { cache: "no-store" });
+    if (!r.ok) return;
+    const doc = await r.json();
+    if (!validData(doc) || (appData && appData.updated === doc.updated)) return;
+    useData(doc);
+  } catch (e) { /* offline or blocked: keep the last known data */ }
+}
+
+/* ---------------- Farm admin: stock, products, settings, home page ---------------- */
+const TOKEN_KEY = "ammasfarm.admin.token";
+const adminToken = {
+  get() { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; } },
+  set(v) { try { if (v) localStorage.setItem(TOKEN_KEY, v); else localStorage.removeItem(TOKEN_KEY); } catch (e) { /* storage blocked */ } }
+};
+let adminData = null, adminTab = "stock", adminFilter = "all", adminQuery = "", adminBusy = false, adminConnErr = "", adminReady = false, adminRepoOk = null, adminErrors = {};
+const ADMIN_TABS = [["stock", "Stock and prices"], ["products", "Products"], ["settings", "Settings"], ["home", "Home page"]];
+async function gh(path, opts = {}) {
+  return fetch(`https://api.github.com/repos/${SRC.owner}/${SRC.repo}${path}`, {
+    ...opts, cache: "no-store",
+    headers: { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", Authorization: `Bearer ${adminToken.get()}`, ...(opts.body ? { "Content-Type": "application/json" } : {}) }
+  });
+}
+const b64encode = str => { const bytes = new TextEncoder().encode(str); let bin = ""; bytes.forEach(b => { bin += String.fromCharCode(b); }); return btoa(bin); };
+const b64decode = b64 => new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, "")), c => c.charCodeAt(0)));
+const NET_ERR = "Couldn't reach GitHub. Check the internet connection, or open the admin page in the Amma's Farm app or website.";
+function ghErrorText(status) {
+  if (status === 401) return "This access key isn't valid or has expired. Disconnect, then connect again with a new key.";
+  if (status === 403 || status === 404) return "This access key can't update the app. Create it for the ammas-farm-app repository with Contents set to Read and write.";
+  return `GitHub returned an error (${status}). Try again in a minute.`;
+}
+async function putFile(path, contentB64, message) {
+  message += " [skip ci]"; // farm data changes must not rebuild the Android app
+  let lastStatus = 0;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    let sha;
+    const g = await gh(`/contents/${path}?ref=${SRC.branch}`);
+    if (g.status === 200) sha = (await g.json()).sha; else if (g.status !== 404) return g.status;
+    const p = await gh(`/contents/${path}`, { method: "PUT", body: JSON.stringify({ message, content: contentB64, branch: SRC.branch, ...(sha ? { sha } : {}) }) });
+    lastStatus = p.status;
+    if (p.ok) return 200;
+    if (p.status !== 409 && p.status !== 422) break;
+  }
+  return lastStatus;
+}
+
+/* --- working copy --- */
+function normalizeDoc(d) {
+  d = d || {};
+  const out = {};
+  const items = {};
+  Object.entries(d.items || {}).forEach(([id, o]) => {
+    const p = BY_ID[id]; if (!p || p.custom || !o) return;
+    const b = p.base, it = {};
+    ["name", "unit"].forEach(k => { if (typeof o[k] === "string" && o[k].trim() && cleanStr(o[k], 60) !== b[k]) it[k] = cleanStr(o[k], k === "name" ? 60 : 40); });
+    [["local", 40], ["desc", 400], ["store", 200]].forEach(([k, m]) => { if (typeof o[k] === "string" && cleanStr(o[k], m) !== b[k]) it[k] = cleanStr(o[k], m); });
+    if (validPrice(o.price) && Math.round(o.price) !== b.price) it.price = Math.round(o.price);
+    if (BADGES.includes(o.status) && o.status !== b.badge) it.status = o.status;
+    if (typeof o.out === "boolean" && o.out !== b.outDefault) it.out = o.out;
+    if (o.hidden === true) it.hidden = true;
+    if (validPhoto(o.photo)) it.photo = o.photo;
+    if (Object.keys(it).length) items[id] = it;
+  });
+  if (Object.keys(items).length) out.items = items;
+  const custom = (Array.isArray(d.custom) ? d.custom : []).filter(validCustom).map(c => {
+    const b = customBase(c);
+    return { id: c.id, cat: c.cat, name: b.name, local: b.local, unit: b.unit, price: b.price, desc: b.desc, store: b.store, status: b.badge, out: b.outDefault, hidden: b.hidden, ...(b.photo ? { photo: b.photo } : {}) };
+  });
+  if (custom.length) out.custom = custom;
+  const s = sanitizeSettings(d.settings);
+  if (JSON.stringify(s) !== JSON.stringify(CONFIG_BASE)) out.settings = s;
+  const h = sanitizeHome(d.home);
+  if (h.title || h.text || h.announcements.length) out.home = h;
+  if (validAuth(d.auth) && !sameAuth(d.auth, AUTH_BASE)) out.auth = { id: d.auth.id, salt: d.auth.salt, iter: d.auth.iter, hash: d.auth.hash };
+  return out;
+}
+const docKey = d => JSON.stringify(normalizeDoc(d));
+const adminDirty = () => adminData && docKey(adminData) !== docKey(appData);
+function startAdminData() { adminData = clone(appData || {}); adminData.items = adminData.items || {}; adminData.custom = adminData.custom || []; adminData.settings = sanitizeSettings(adminData.settings); adminData.home = sanitizeHome(adminData.home); adminErrors = {}; }
+function adminProducts() {
+  const builtins = ALL_PRODUCTS.filter(p => !p.custom);
+  const customs = adminData.custom.filter(validCustom).map(c => ({ id: c.id, cat: c.cat, custom: true, base: customBase(c) }));
+  return [...builtins, ...customs];
+}
+const findCustom = id => adminData.custom.find(c => c.id === id);
+function adminEff(p) { if (p.custom) { const c = findCustom(p.id); return effective({ ...p, base: customBase(c) }, null); } return effective(p, adminData.items); }
+function setField(p, key, value) {
+  if (p.custom) { const c = findCustom(p.id); if (!c) return; c[key === "badge" ? "status" : key] = value; return; }
+  const it = adminData.items[p.id] = adminData.items[p.id] || {};
+  it[key === "badge" ? "status" : key] = value;
+}
+function adminArt(p, e) {
+  return e.photo ? `<img class="ph-img" src="${esc(rawUrl(e.photo))}" alt="" loading="lazy" decoding="async">` : drawing(p);
+}
+const catName = id => id === "box" ? "Harvest boxes" : (CATEGORIES.find(c => c.id === id) || {}).name || "";
+
+/* --- connection --- */
+async function loadAdminData() {
+  if (!adminToken.get()) { adminRepoOk = null; return; }
+  try {
+    const r = await gh(`/contents/${SRC.path}?ref=${SRC.branch}`);
+    if (r.status === 200) {
+      const j = await r.json(); const doc = JSON.parse(b64decode(j.content));
+      if (validData(doc) && !adminDirty()) { appData = doc; store.set("appdata", doc); applyData(doc); startAdminData(); }
+      adminRepoOk = true; adminConnErr = "";
+    } else if (r.status === 404) { const repo = await gh(""); adminRepoOk = repo.ok; adminConnErr = repo.ok ? "" : ghErrorText(repo.status); }
+    else { adminRepoOk = false; adminConnErr = ghErrorText(r.status); }
+  } catch (e) { adminRepoOk = false; adminConnErr = NET_ERR; }
+}
+function renderAdminConn() {
+  const box = $("#adminConn");
+  if (adminToken.get()) {
+    box.innerHTML = `<div class="conn-ok">${adminRepoOk === false ? icon("info", 20) : icon("check", 20, 2.4)}<span>${adminRepoOk === false ? "Connection problem" : adminRepoOk ? "Connected. Changes publish to customers." : "Connecting…"}</span><span class="muted">${esc(SRC.owner)}/${esc(SRC.repo)}</span><button type="button" class="btn btn-line btn-sm" id="adminDisconnect" style="margin-left:auto">Disconnect this phone</button></div>${adminConnErr ? `<p class="admin-err">${esc(adminConnErr)}</p>` : ""}`;
+    $("#adminDisconnect").onclick = () => { adminToken.set(""); adminRepoOk = null; adminConnErr = ""; renderAdminConn(); renderAdminBar(); toast("Disconnected"); };
+    return;
+  }
+  box.innerHTML = `<h2 class="display">Connect this phone to publish</h2>
+    <p>You can make changes below without connecting, but customers only see them after you publish. Connecting takes two minutes, once per phone.</p>
+    <ol>
+      <li>On GitHub, open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer"><b>Fine-grained tokens → Generate new token</b></a> and sign in as ${esc(SRC.owner)}.</li>
+      <li>Name it <b>Amma's Farm admin</b> and set the expiration to 1 year.</li>
+      <li>Under Repository access choose <b>Only select repositories → ${esc(SRC.repo)}</b>.</li>
+      <li>Under Permissions → Repository permissions set <b>Contents</b> to <b>Read and write</b>. Generate the token and copy it.</li>
+      <li>Paste it here. It stays on this phone only.</li>
+    </ol>
+    <div class="row-in"><label class="sr" for="adminKey">Access key</label><input class="inp" id="adminKey" type="password" autocomplete="off" spellcheck="false" placeholder="Paste the github_pat_… key"><button type="button" class="btn btn-primary" id="adminConnect">Connect</button></div>
+    ${adminConnErr ? `<p class="admin-err">${esc(adminConnErr)}</p>` : ""}`;
+  $("#adminConnect").onclick = connectAdmin;
+  $("#adminKey").addEventListener("keydown", e => { if (e.key === "Enter") connectAdmin(); });
+}
+async function connectAdmin() {
+  const key = ($("#adminKey").value || "").trim();
+  if (!/^(github_pat_|ghp_)[A-Za-z0-9_]{20,}$/.test(key)) { adminConnErr = "That doesn't look like a GitHub access key. It starts with github_pat_."; renderAdminConn(); $("#adminKey").focus(); return; }
+  const btn = $("#adminConnect"); btn.disabled = true; btn.textContent = "Checking…";
+  adminToken.set(key);
+  try {
+    const r = await gh("");
+    if (!r.ok) { adminToken.set(""); adminConnErr = ghErrorText(r.status); renderAdminConn(); return; }
+    adminConnErr = ""; adminRepoOk = true; toast("Connected");
+    await loadAdminData(); renderAdminConn(); renderAdminPanel(); renderAdminBar();
+  } catch (e) { adminToken.set(""); adminConnErr = NET_ERR; renderAdminConn(); }
+}
+
+/* --- Admin login (ID + password). Only a salted PBKDF2 hash is stored; the password itself is never kept. --- */
+const AUTH_BASE = { id: "ammasadmin", salt: "d84c5132384870a4e2f2f42f82520467", iter: 150000, hash: "8e7768ce4f11d49b65b7e3a203142226f016abf3955303493775a0b43d91626d" };
+const validAuth = a => !!(a && typeof a === "object" && /^[A-Za-z0-9._@-]{4,40}$/.test(a.id) && /^[0-9a-f]{32}$/.test(a.salt) && Number.isInteger(a.iter) && a.iter >= 100000 && a.iter <= 2000000 && /^[0-9a-f]{64}$/.test(a.hash));
+const curAuth = () => validAuth(appData && appData.auth) ? appData.auth : AUTH_BASE;
+const sameAuth = (a, b) => a.id === b.id && a.salt === b.salt && a.iter === b.iter && a.hash === b.hash;
+const SESSION_KEY = "ammasfarm.admin.session", FAIL_KEY = "ammasfarm.admin.fails";
+const lsGet = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const lsSet = (k, v) => { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { /* storage blocked */ } };
+let memSession = "";
+const adminSession = { get() { return lsGet(SESSION_KEY) || memSession; }, set(v) { memSession = v || ""; lsSet(SESSION_KEY, v || null); } };
+const adminLoggedIn = () => adminSession.get() === curAuth().hash;
+const hexBytes = h => new Uint8Array(h.match(/../g).map(x => parseInt(x, 16)));
+async function authHash(id, pw, salt, iter) {
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(id + ":" + pw), "PBKDF2", false, ["deriveBits"]);
+  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hexBytes(salt), iterations: iter }, key, 256);
+  return [...new Uint8Array(bits)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+function failState() { try { return JSON.parse(lsGet(FAIL_KEY)) || { n: 0, until: 0 }; } catch (e) { return { n: 0, until: 0 }; } }
+let loginErr = "";
+function renderAdminLogin() {
+  const box = $("#adminLogin"), sec = $("#view-admin"), inn = adminLoggedIn();
+  sec.classList.toggle("locked", !inn);
+  if (inn) {
+    box.innerHTML = `<div class="admin-who">${icon("check", 18, 2.4)}<span>Signed in as <b>${esc(curAuth().id)}</b></span><button type="button" class="btn btn-line btn-sm" id="adminLogout">Log out</button></div>`;
+    $("#adminLogout").onclick = () => { adminSession.set(""); renderAdmin(); toast("Logged out"); };
+    return;
+  }
+  const can = !!(window.crypto && crypto.subtle);
+  box.innerHTML = `<form class="about-block admin-login" id="loginForm" novalidate>
+    <h2 class="display">Admin login</h2>
+    <p class="muted">For the Amma's Farm team only.</p>
+    <div class="fld"><label for="lg-id">Admin ID</label><input class="inp" id="lg-id" autocomplete="username" autocapitalize="off" spellcheck="false" maxlength="40"></div>
+    <div class="fld"><label for="lg-pw">Password</label><div class="pwrow"><input class="inp" id="lg-pw" type="password" autocomplete="current-password" maxlength="64"><button type="button" class="btn btn-line btn-sm" id="lg-show" aria-pressed="false">Show</button></div></div>
+    ${loginErr ? `<p class="admin-err" role="alert">${esc(loginErr)}</p>` : ""}
+    ${can ? "" : `<p class="admin-err">Login needs a secure page. Open the admin in the Amma's Farm app or on the https website.</p>`}
+    <button class="btn btn-primary btn-block" id="lg-go" ${can ? "" : "disabled"}>Log in</button>
+  </form>`;
+  $("#lg-show").onclick = e => { const i = $("#lg-pw"), on = i.type === "password"; i.type = on ? "text" : "password"; e.currentTarget.textContent = on ? "Hide" : "Show"; e.currentTarget.setAttribute("aria-pressed", on); };
+  $("#loginForm").onsubmit = e => { e.preventDefault(); doLogin(); };
+}
+async function doLogin() {
+  const id = $("#lg-id").value.trim(), pw = $("#lg-pw").value, btn = $("#lg-go");
+  const f = failState(), wait = Math.ceil((f.until - Date.now()) / 1000);
+  if (wait > 0) { loginErr = `Too many wrong tries. Try again in ${wait} seconds.`; renderAdminLogin(); return; }
+  if (!id || !pw) { loginErr = "Enter the admin ID and password."; renderAdminLogin(); $("#lg-id").value = id; (id ? $("#lg-pw") : $("#lg-id")).focus(); return; }
+  btn.disabled = true; btn.textContent = "Checking…";
+  const a = curAuth(); let ok = false;
+  try { ok = id.toLowerCase() === a.id.toLowerCase() && await authHash(a.id, pw, a.salt, a.iter) === a.hash; } catch (e) { ok = false; }
+  if (ok) { lsSet(FAIL_KEY, null); loginErr = ""; adminSession.set(a.hash); toast("Welcome back"); renderAdmin(); return; }
+  const n = f.n + 1, lock = n >= 5 ? 30000 * Math.pow(2, Math.min(n - 5, 6)) : 0;
+  lsSet(FAIL_KEY, JSON.stringify({ n, until: lock ? Date.now() + lock : 0 }));
+  loginErr = lock ? `Wrong ID or password. Too many tries, so login is paused for ${lock / 1000} seconds.` : "Wrong ID or password.";
+  renderAdminLogin(); $("#lg-id").value = id; $("#lg-pw").focus();
+}
+function renderLoginChange(el) {
+  const a = adminData.auth && validAuth(adminData.auth) ? adminData.auth : curAuth();
+  const blk = document.createElement("div"); blk.className = "about-block"; blk.id = "loginChange";
+  blk.innerHTML = `<h2 class="display">Admin login</h2>
+    <p class="muted">Change the ID or password used to open this admin. It applies on every phone after you publish.</p>
+    <div class="fld"><label for="lc-id">Admin ID</label><input class="inp" id="lc-id" autocapitalize="off" spellcheck="false" maxlength="40" value="${esc(a.id)}"></div>
+    <div class="row2"><div class="fld"><label for="lc-pw">New password</label><input class="inp" id="lc-pw" type="password" autocomplete="new-password" maxlength="64"></div>
+    <div class="fld"><label for="lc-pw2">Type it again</label><input class="inp" id="lc-pw2" type="password" autocomplete="new-password" maxlength="64"></div></div>
+    <p class="admin-err" id="lc-err" hidden></p>
+    <button type="button" class="btn btn-line" id="lc-go">Set new login</button>`;
+  el.appendChild(blk);
+  $("#lc-go").onclick = async () => {
+    const id = $("#lc-id").value.trim(), pw = $("#lc-pw").value, pw2 = $("#lc-pw2").value, er = $("#lc-err");
+    const bad = !/^[A-Za-z0-9._@-]{4,40}$/.test(id) ? "Admin ID: 4 to 40 letters or numbers, no spaces." : pw.length < 8 ? "Password: at least 8 characters." : pw !== pw2 ? "The two passwords don't match." : "";
+    er.hidden = !bad; er.textContent = bad; if (bad) return;
+    const salt = [...crypto.getRandomValues(new Uint8Array(16))].map(b => b.toString(16).padStart(2, "0")).join(""), iter = 150000;
+    adminData.auth = { id, salt, iter, hash: await authHash(id, pw, salt, iter) };
+    $("#lc-pw").value = $("#lc-pw2").value = ""; afterEdit(); toast("New login ready. Publish to apply it.");
+  };
+}
+
+/* --- page shell --- */
+async function renderAdmin() {
+  if (!adminReady) {
+    adminReady = true;
+    startAdminData();
+    $("#adminTabs").addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (!b) return; adminTab = b.dataset.tab; adminQuery = ""; adminFilter = "all"; renderAdminPanel(); });
+    $("#adminDiscard").onclick = () => { startAdminData(); renderAdminPanel(); renderAdminBar(); toast("Changes discarded"); };
+    $("#adminPublish").onclick = publishAdmin;
+  } else if (!adminDirty()) startAdminData();
+  renderAdminLogin();
+  if (!adminLoggedIn()) { $("#adminBar").hidden = true; if (!adminDirty()) startAdminData(); return; }
+  renderAdminConn(); renderAdminPanel(); renderAdminBar();
+  if (adminToken.get()) { await loadAdminData(); renderAdminConn(); renderAdminPanel(); renderAdminBar(); }
+}
+function renderAdminPanel() {
+  $("#adminTabs").innerHTML = ADMIN_TABS.map(([id, name]) => `<button type="button" role="tab" aria-selected="${id === adminTab}" data-tab="${id}">${name}</button>`).join("");
+  const el = $("#adminPanel");
+  if (adminTab === "stock") renderStockTab(el);
+  else if (adminTab === "products") renderProductsTab(el);
+  else if (adminTab === "settings") renderSettingsTab(el);
+  else renderHomeTab(el);
+}
+function renderAdminBar() {
+  if (!adminLoggedIn()) { $("#adminBar").hidden = true; return; }
+  const dirty = adminDirty(), bad = Object.keys(adminErrors).length;
+  $("#adminBar").hidden = !dirty;
+  $("#adminCnt").innerHTML = `Unpublished changes<small>${bad ? "Fix the highlighted fields to publish" : adminToken.get() ? "Customers see them after you publish" : "Connect this phone above to publish"}</small>`;
+}
+const afterEdit = () => renderAdminBar();
+
+/* --- Stock and prices --- */
+function renderStockTab(el) {
+  Object.keys(adminErrors).forEach(k => { if (k.startsWith("price-")) delete adminErrors[k]; });
+  const list = adminProducts();
+  const outN = list.filter(p => !adminEff(p).hidden && adminEff(p).out).length, shown = list.filter(p => !adminEff(p).hidden).length;
+  el.innerHTML = `<div class="admin-sum"><div><b>${shown - outN}</b><span>In stock</span></div><div class="is-out"><b>${outN}</b><span>Out of stock</span></div><div><b>${appData && appData.updated ? new Date(appData.updated).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : "–"}</b><span>${appData && appData.updated ? "Last published " + new Date(appData.updated).toLocaleTimeString("en-IN", { hour: "numeric", minute: "2-digit" }) : "Not published yet"}</span></div></div>
+    <div class="admin-tools"><div class="search" role="search">${icon("search", 20)}<label class="sr" for="adminQ">Search products</label><input id="adminQ" type="search" autocomplete="off" placeholder="Search tomato, palak, mango" value="${esc(adminQuery)}"></div><button type="button" class="btn btn-line btn-sm" id="adminAllIn">Mark all in stock</button></div>
+    <div class="chips" id="adminChips" role="group" aria-label="Filter products">${[["all", "All"], ["out", "Out of stock"], ...CATEGORIES.map(c => [c.id, c.name])].map(([id, name]) => `<button type="button" class="chip" data-af="${id}" aria-pressed="${id === adminFilter}">${name}</button>`).join("")}</div>
+    <div class="admin-list" id="adminList"></div>`;
+  $("#adminQ").addEventListener("input", e => { adminQuery = e.target.value; renderStockList(); });
+  $("#adminChips").addEventListener("click", e => { const b = e.target.closest("[data-af]"); if (!b) return; adminFilter = b.dataset.af; $("#adminChips").querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.af === adminFilter)); renderStockList(); });
+  $("#adminAllIn").onclick = () => { adminProducts().forEach(p => { if (adminEff(p).out) setField(p, "out", false); }); renderStockTab(el); afterEdit(); toast("Everything marked in stock. Publish to apply."); };
+  const L = $("#adminList");
+  L.addEventListener("change", e => { const row = e.target.closest("[data-aid]"); if (!row || e.target.type !== "checkbox") return; const p = adminProducts().find(x => x.id === row.dataset.aid); setField(p, "out", !e.target.checked); paintStockRow(row, p); afterEdit(); });
+  L.addEventListener("input", e => {
+    if (e.target.name !== "price") return;
+    const row = e.target.closest("[data-aid]"), p = adminProducts().find(x => x.id === row.dataset.aid), v = e.target.value.trim(), n = Number(v), ok = v !== "" && validPrice(n);
+    e.target.closest(".aprice").classList.toggle("bad", !ok);
+    if (ok) { setField(p, "price", Math.round(n)); delete adminErrors["price-" + p.id]; } else adminErrors["price-" + p.id] = 1;
+    paintStockRow(row, p); afterEdit();
+  });
+  renderStockList();
+}
+function renderStockList() {
+  const q = fold(adminQuery.trim());
+  const list = adminProducts().filter(p => { const e = adminEff(p); return !e.hidden && (adminFilter === "all" || (adminFilter === "out" ? e.out : p.cat === adminFilter)) && (!q || fold(`${e.name} ${e.local}`).includes(q)); });
+  let html = "", last = null;
+  for (const p of list) {
+    const e = adminEff(p);
+    if ((adminFilter === "all" || adminFilter === "out") && p.cat !== last) { last = p.cat; html += `<div class="admin-group">${esc(catName(p.cat))}</div>`; }
+    html += `<div class="arow" data-aid="${p.id}"><div class="tile">${adminArt(p, e)}</div>
+      <div class="anm"><b>${esc(e.name)}</b><small>${esc(e.unit)}${e.local ? " · " + esc(e.local) : ""}</small><span class="st${e.out ? " out" : ""}">${e.out ? "Out of stock" : "In stock"}</span></div>
+      <label class="aprice"><span>₹</span><span class="sr">Price of ${esc(e.name)}</span><input name="price" type="number" inputmode="numeric" min="1" step="1" value="${e.price}"></label>
+      <label class="aswitch"><input type="checkbox" role="switch" ${e.out ? "" : "checked"} aria-label="${esc(e.name)} in stock"><span class="sw" aria-hidden="true"></span></label></div>`;
+  }
+  $("#adminList").innerHTML = html || `<p class="admin-empty">${adminFilter === "out" ? "Everything is in stock." : `No product matches “${esc(adminQuery)}”.`}</p>`;
+}
+function paintStockRow(row, p) { const e = adminEff(p), st = row.querySelector(".st"); st.textContent = e.out ? "Out of stock" : "In stock"; st.classList.toggle("out", e.out); }
+
+/* --- Products --- */
+function renderProductsTab(el) {
+  el.innerHTML = `<div class="admin-tools"><div class="search" role="search">${icon("search", 20)}<label class="sr" for="adminPQ">Search products</label><input id="adminPQ" type="search" autocomplete="off" placeholder="Search products" value="${esc(adminQuery)}"></div><button type="button" class="btn btn-primary btn-sm" id="adminAdd">${icon("plus", 16, 2.4)}Add a product</button></div>
+    <p class="admin-hint">Edit names, Gujarati names, pack sizes, descriptions and photos, hide products from the shop, or add new ones.</p>
+    <div class="admin-list" id="adminPList"></div>`;
+  $("#adminPQ").addEventListener("input", e => { adminQuery = e.target.value; renderProductList(); });
+  $("#adminAdd").onclick = () => openProductEditor(null);
+  $("#adminPList").addEventListener("click", e => { const b = e.target.closest("[data-edit]"); if (b) openProductEditor(b.dataset.edit); });
+  renderProductList();
+}
+function renderProductList() {
+  const q = fold(adminQuery.trim());
+  const list = adminProducts().filter(p => { const e = adminEff(p); return !q || fold(`${e.name} ${e.local}`).includes(q); });
+  let html = "", last = null;
+  for (const p of list) {
+    const e = adminEff(p);
+    if (p.cat !== last) { last = p.cat; html += `<div class="admin-group">${esc(catName(p.cat))}</div>`; }
+    const tags = [e.hidden && `<span class="st out">Hidden</span>`, p.custom && `<span class="st new">Added by you</span>`, e.badge && `<span class="st">${esc(e.badge)}</span>`].filter(Boolean).join(" ");
+    html += `<div class="prow"><div class="tile">${adminArt(p, e)}</div><div class="anm"><b>${esc(e.name)}</b><small>${esc(e.unit)} · ${inr(e.price)}${e.local ? " · " + esc(e.local) : ""}</small>${tags ? `<span class="tags">${tags}</span>` : ""}</div><button type="button" class="btn btn-line btn-sm" data-edit="${p.id}" aria-label="Edit ${esc(e.name)}">Edit</button></div>`;
+  }
+  $("#adminPList").innerHTML = html || `<p class="admin-empty">No product matches “${esc(adminQuery)}”.</p>`;
+}
+let editorPhoto = null, editorDeleteArmed = false;
+function openProductEditor(id) {
+  const isNew = !id;
+  const p = isNew ? null : adminProducts().find(x => x.id === id);
+  const e = p ? adminEff(p) : { name: "", local: "", unit: "", price: "", desc: "", store: "", badge: "", out: false, hidden: false, photo: "" };
+  editorPhoto = e.photo; editorDeleteArmed = false;
+  dlgMode = "aedit"; openDialog("drawer");
+  setDialog({ title: isNew ? "Add a product" : "Edit product" });
+  const cats = SHOP_CATS();
+  $("#dlgBody").innerHTML = `<form class="form" id="peForm" novalidate>
+    <div class="pe-photo"><div class="tile" id="pePrev">${p ? adminArt(p, e) : drawing({ id: "", cat: "veg", custom: true })}</div>
+      <div><b>Photo</b><p class="admin-hint">A clear photo on a plain background works best. ${adminToken.get() ? "" : "Connect this phone first to add photos."}</p>
+      <div class="row-btns"><label class="btn btn-line btn-sm pe-file${adminToken.get() ? "" : " is-off"}">${icon("plus", 16, 2.4)}<span id="pePhotoLbl">${e.photo ? "Change photo" : "Add photo"}</span><input type="file" accept="image/*" id="peFile" ${adminToken.get() ? "" : "disabled"}></label>
+      <button type="button" class="btn btn-line btn-sm" id="peNoPhoto" ${e.photo ? "" : "hidden"}>Use drawing</button></div><p class="admin-err" id="pePhotoErr" hidden></p></div></div>
+    <div class="fld" data-pe="name"><label for="pe-name">Product name</label><input class="inp" id="pe-name" maxlength="60" value="${esc(e.name)}" placeholder="Desi tomato"><div class="err">Enter a name of at least 2 letters.</div></div>
+    <div class="row2">
+      <div class="fld"><label for="pe-local">Gujarati or local name <span class="opt">(optional)</span></label><input class="inp" id="pe-local" maxlength="40" value="${esc(e.local)}" placeholder="Tameta"></div>
+      <div class="fld" data-pe="unit"><label for="pe-unit">Pack size</label><input class="inp" id="pe-unit" maxlength="40" value="${esc(e.unit)}" placeholder="500 g"><div class="err">Enter a pack size, like 500 g or 1 bunch.</div></div>
+    </div>
+    <div class="row2">
+      <div class="fld" data-pe="price"><label for="pe-price">Price (₹)</label><input class="inp" id="pe-price" type="number" inputmode="numeric" min="1" step="1" value="${esc(e.price)}" placeholder="40"><div class="err">Enter a price above ₹0.</div></div>
+      <div class="fld"><label for="pe-badge">Label on the card</label><select class="inp" id="pe-badge">${BADGES.map(b => `<option value="${b}"${b === e.badge ? " selected" : ""}>${b || "None"}</option>`).join("")}</select></div>
+    </div>
+    ${isNew || (p && p.custom) ? `<div class="fld"><label for="pe-cat">Section in the shop</label><select class="inp" id="pe-cat">${cats.map(c => `<option value="${c.id}"${p && p.cat === c.id ? " selected" : ""}>${esc(c.name)}</option>`).join("")}</select></div>` : ""}
+    <div class="fld"><label for="pe-desc">Description <span class="opt">(optional)</span></label><textarea class="inp" id="pe-desc" maxlength="400" placeholder="What it tastes like and what to cook with it">${esc(e.desc)}</textarea></div>
+    <div class="fld"><label for="pe-store">Storage tip <span class="opt">(optional)</span></label><input class="inp" id="pe-store" maxlength="200" value="${esc(e.store)}" placeholder="Refrigerate and use within 3 days."></div>
+    <label class="toggle"><input type="checkbox" id="pe-in" ${e.out ? "" : "checked"}><span class="sw" aria-hidden="true"></span><span><b>In stock</b><em>Customers can order it today.</em></span></label>
+    <label class="toggle"><input type="checkbox" id="pe-show" ${e.hidden ? "" : "checked"}><span class="sw" aria-hidden="true"></span><span><b>Show in the shop</b><em>Turn off to hide it without deleting it.</em></span></label>
+  </form>`;
+  $("#dlgFoot").innerHTML = `<div class="pe-foot">${p && p.custom ? `<button type="button" class="btn btn-line" id="peDelete">Delete</button>` : p && adminData.items[p.id] && Object.keys(adminData.items[p.id]).length ? `<button type="button" class="btn btn-line" id="peReset">Reset to original</button>` : ""}<button type="button" class="btn btn-primary" id="peSave">${isNew ? "Add product" : "Save changes"}</button></div>`;
+  const prev = () => { $("#pePrev").innerHTML = editorPhoto ? `<img class="ph-img" src="${esc(rawUrl(editorPhoto))}" alt="">` : drawing(p || { id: "", cat: "veg", custom: true }); $("#peNoPhoto").hidden = !editorPhoto; $("#pePhotoLbl").textContent = editorPhoto ? "Change photo" : "Add photo"; };
+  $("#peNoPhoto").onclick = () => { editorPhoto = ""; prev(); };
+  $("#peFile").addEventListener("change", async ev => {
+    const file = ev.target.files && ev.target.files[0]; if (!file) return;
+    const err = $("#pePhotoErr"); err.hidden = true;
+    $("#pePhotoLbl").textContent = "Uploading…";
+    try { editorPhoto = await uploadPhoto(file, p ? p.id : "new"); prev(); toast("Photo uploaded"); }
+    catch (x) { err.textContent = x && x.message ? x.message : "The photo couldn't be uploaded. Try another photo."; err.hidden = false; prev(); }
+    ev.target.value = "";
+  });
+  if ($("#peReset")) $("#peReset").onclick = () => { delete adminData.items[p.id]; closeDialog(); afterProductSave("Reset to original"); };
+  if ($("#peDelete")) $("#peDelete").onclick = () => {
+    if (!editorDeleteArmed) { editorDeleteArmed = true; $("#peDelete").textContent = "Tap again to delete"; $("#peDelete").classList.add("danger"); return; }
+    adminData.custom = adminData.custom.filter(c => c.id !== p.id); closeDialog(); afterProductSave("Product deleted");
+  };
+  $("#peSave").onclick = () => {
+    const v = id2 => ($(id2).value || "").trim();
+    const name = v("#pe-name"), unit = v("#pe-unit"), price = Number(v("#pe-price"));
+    const ok = { name: name.length >= 2, unit: unit.length >= 1, price: validPrice(price) };
+    let first = null;
+    Object.entries(ok).forEach(([k, good]) => { const f = document.querySelector(`[data-pe="${k}"]`); f.classList.toggle("bad", !good); if (!good && !first) first = f.querySelector("input"); });
+    if (first) { first.focus(); return; }
+    const vals = { name, local: v("#pe-local"), unit, price: Math.round(price), desc: v("#pe-desc"), store: v("#pe-store"), badge: $("#pe-badge").value, out: !$("#pe-in").checked, hidden: !$("#pe-show").checked, photo: editorPhoto || "" };
+    if (isNew) {
+      adminData.custom.push({ id: "c_" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), cat: $("#pe-cat").value, name: vals.name, local: vals.local, unit: vals.unit, price: vals.price, desc: vals.desc, store: vals.store, status: vals.badge, out: vals.out, hidden: vals.hidden, ...(vals.photo ? { photo: vals.photo } : {}) });
+      closeDialog(); afterProductSave(`${vals.name} added`);
+      return;
+    }
+    if (p.custom) { const c = findCustom(p.id); Object.assign(c, { cat: $("#pe-cat").value, name: vals.name, local: vals.local, unit: vals.unit, price: vals.price, desc: vals.desc, store: vals.store, status: vals.badge, out: vals.out, hidden: vals.hidden }); if (vals.photo) c.photo = vals.photo; else delete c.photo; }
+    else {
+      ["name", "local", "unit", "price", "desc", "store", "badge", "out"].forEach(k => setField(p, k, vals[k]));
+      const it = adminData.items[p.id]; if (vals.hidden) it.hidden = true; else delete it.hidden;
+      if (vals.photo) it.photo = vals.photo; else delete it.photo;
+    }
+    closeDialog(); afterProductSave("Saved. Publish to show customers.");
+  };
+  focusFirst("#pe-name");
+}
+function afterProductSave(msg) { renderAdminPanel(); renderAdminBar(); toast(msg); }
+async function uploadPhoto(file, id) {
+  if (!adminToken.get()) throw new Error("Connect this phone first to add photos.");
+  if (!/^image\//.test(file.type)) throw new Error("Choose a photo file.");
+  if (file.size > 25 * 1024 * 1024) throw new Error("That photo is too large. Choose one under 25 MB.");
+  const url = URL.createObjectURL(file);
+  try {
+    const img = new Image(); img.src = url; await img.decode();
+    const scale = Math.min(1, 1000 / Math.max(img.naturalWidth, img.naturalHeight));
+    const c = document.createElement("canvas"); c.width = Math.round(img.naturalWidth * scale); c.height = Math.round(img.naturalHeight * scale);
+    c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    const blob = await new Promise(r => c.toBlob(r, "image/jpeg", 0.82));
+    if (!blob) throw new Error("This photo format isn't supported. Try a JPG or PNG.");
+    const bin = new Uint8Array(await blob.arrayBuffer()); let s = ""; for (let i = 0; i < bin.length; i += 0x8000) s += String.fromCharCode.apply(null, bin.subarray(i, i + 0x8000));
+    const path = `images/${id.replace(/[^a-z0-9_]/gi, "")}-${Date.now().toString(36)}.jpg`;
+    const st = await putFile(path, btoa(s), `Photo for ${id}`);
+    if (st !== 200) throw new Error(ghErrorText(st));
+    return path;
+  } catch (e) {
+    if (e instanceof TypeError) throw new Error(NET_ERR);
+    throw e;
+  } finally { URL.revokeObjectURL(url); }
+}
+
+/* --- Settings --- */
+function renderSettingsTab(el) {
+  Object.keys(adminErrors).forEach(k => { if (k.startsWith("s-")) delete adminErrors[k]; });
+  const s = adminData.settings;
+  const hourOpt = h => `<option value="${h}"${h === s.cutoffHour ? " selected" : ""}>${hourLabel(h)}</option>`;
+  el.innerHTML = `<form class="form aform" id="setForm" novalidate>
+    <div class="about-block"><h2 class="display">Orders and contact</h2>
+      <div class="row2">
+        <div class="fld" data-s="whatsapp"><label for="s-wa">WhatsApp number for orders</label><div class="phone"><span>+91</span><input class="inp" id="s-wa" inputmode="numeric" maxlength="10" value="${esc(s.whatsapp.replace(/^91/, ""))}"></div><div class="err">Enter a 10-digit mobile number.</div></div>
+        <div class="fld" data-s="phone"><label for="s-phone">Call number <span class="opt">(optional)</span></label><input class="inp" id="s-phone" type="tel" maxlength="16" value="${esc(s.phone)}" placeholder="+91 99771 04545"><div class="err">Enter a valid phone number, or leave it empty.</div></div>
+      </div>
+    </div>
+    <div class="about-block"><h2 class="display">Delivery</h2>
+      <div class="row3">
+        <div class="fld" data-s="deliveryFee"><label for="s-fee">Delivery fee (₹)</label><input class="inp" id="s-fee" type="number" inputmode="numeric" min="0" value="${s.deliveryFee}"><div class="err">Enter 0 to 1000.</div></div>
+        <div class="fld" data-s="freeDeliveryAbove"><label for="s-free">Free delivery above (₹)</label><input class="inp" id="s-free" type="number" inputmode="numeric" min="0" value="${s.freeDeliveryAbove}"><div class="err">Enter an amount.</div></div>
+        <div class="fld" data-s="minOrder"><label for="s-min">Minimum order (₹)</label><input class="inp" id="s-min" type="number" inputmode="numeric" min="0" value="${s.minOrder}"><div class="err">Enter an amount.</div></div>
+      </div>
+      <div class="fld"><label for="s-cut">Order before (for next-day delivery)</label><select class="inp" id="s-cut">${Array.from({ length: 23 }, (_, i) => hourOpt(i + 1)).join("")}</select></div>
+      <div class="fld" data-s="slots"><span class="legend">Delivery slots</span>${s.slots.map((sl, i) => `<div class="row2 slotrow"><input class="inp" data-slot="${i}" data-k="name" maxlength="30" value="${esc(sl.name)}" aria-label="Slot ${i + 1} name"><input class="inp" data-slot="${i}" data-k="time" maxlength="30" value="${esc(sl.time)}" aria-label="Slot ${i + 1} time"></div>`).join("")}<div class="err">Every slot needs a name and a time.</div></div>
+      <div class="fld" data-s="pincodePrefixes"><label for="s-pin">Delivery pincodes (starting digits, separated by commas)</label><input class="inp" id="s-pin" value="${esc(s.pincodePrefixes.join(", "))}" placeholder="380, 382"><div class="err">Enter starting digits like 380, 382.</div></div>
+    </div>
+    <div class="about-block"><h2 class="display">Farm visits</h2>
+      <div class="fld" data-s="visitDays"><span class="legend">Visit days</span><div class="daygrid">${[1, 2, 3, 4, 5, 6, 0].map(d => `<label class="achip"><input type="checkbox" data-day="${d}" ${s.visitDays.includes(d) ? "checked" : ""}><span>${DAY_NAMES[d].slice(0, 3)}</span></label>`).join("")}</div><div class="err">Choose at least one day.</div></div>
+      <div class="fld"><span class="legend">Dinner and bonfire months</span><div class="daygrid">${Array.from({ length: 12 }, (_, i) => i + 1).map(m => `<label class="achip"><input type="checkbox" data-month="${m}" ${s.winterMonths.includes(m) ? "checked" : ""}><span>${new Date(2026, m - 1, 1).toLocaleDateString("en-IN", { month: "short" })}</span></label>`).join("")}</div></div>
+    </div>
+  </form>`;
+  const f = $("#setForm");
+  const read = () => {
+    const S = adminData.settings, err = k => { adminErrors["s-" + k] = 1; }, okk = k => { delete adminErrors["s-" + k]; };
+    const wa = $("#s-wa").value.replace(/\D/g, "").slice(-10); if (/^[6-9]\d{9}$/.test(wa)) { S.whatsapp = "91" + wa; okk("whatsapp"); } else err("whatsapp");
+    const ph = $("#s-phone").value.trim(); if (ph === "" || /^\+?[\d\s-]{10,16}$/.test(ph)) { S.phone = ph; okk("phone"); } else err("phone");
+    [["deliveryFee", "#s-fee", 1000], ["freeDeliveryAbove", "#s-free", 100000], ["minOrder", "#s-min", 100000]].forEach(([k, sel, hi]) => { const v = $(sel).value.trim(), n = Number(v); if (v !== "" && Number.isInteger(n) && n >= 0 && n <= hi) { S[k] = n; okk(k); } else err(k); });
+    S.cutoffHour = Number($("#s-cut").value);
+    const slots = S.slots.map((sl, i) => ({ id: sl.id, name: f.querySelector(`[data-slot="${i}"][data-k="name"]`).value.trim(), time: f.querySelector(`[data-slot="${i}"][data-k="time"]`).value.trim() }));
+    if (slots.every(x => x.name && x.time)) { S.slots = slots; okk("slots"); } else err("slots");
+    const pins = $("#s-pin").value.split(/[,\s]+/).filter(Boolean); if (pins.length && pins.every(x => /^\d{3,6}$/.test(x))) { S.pincodePrefixes = pins; okk("pincodePrefixes"); } else err("pincodePrefixes");
+    const days = [...f.querySelectorAll("[data-day]:checked")].map(x => Number(x.dataset.day)); if (days.length) { S.visitDays = days; okk("visitDays"); } else err("visitDays");
+    S.winterMonths = [...f.querySelectorAll("[data-month]:checked")].map(x => Number(x.dataset.month));
+    f.querySelectorAll("[data-s]").forEach(el2 => el2.classList.toggle("bad", !!adminErrors["s-" + el2.dataset.s]));
+    afterEdit();
+  };
+  f.addEventListener("input", read); f.addEventListener("change", read);
+  renderLoginChange(el);
+}
+
+/* --- Home page --- */
+function renderHomeTab(el) {
+  const h = adminData.home;
+  el.innerHTML = `<form class="form aform" id="homeForm" novalidate>
+    <div class="about-block"><h2 class="display">Main headline</h2>
+      <div class="fld"><label for="h-title">Headline <span class="opt">(empty uses “Happiness, harvested.”)</span></label><input class="inp" id="h-title" maxlength="80" value="${esc(h.title)}" placeholder="Happiness, harvested."></div>
+      <div class="fld"><label for="h-text">Text under the headline <span class="opt">(empty uses the standard text)</span></label><textarea class="inp" id="h-text" maxlength="320" placeholder="Certified organic vegetables, fruits and exotic greens from our farm at Sedfa, near Kadi.">${esc(h.text)}</textarea></div>
+    </div>
+    <div class="about-block"><h2 class="display">Announcement bar</h2>
+      <div class="fld"><label for="h-ann">Messages at the top of the app, one per line (up to 6) <span class="opt">(empty uses the standard messages)</span></label><textarea class="inp" id="h-ann" rows="6" placeholder="Fresh mangoes are back this week&#10;Diwali gift boxes now available">${esc(h.announcements.join("\n"))}</textarea></div>
+    </div>
+  </form>`;
+  $("#homeForm").addEventListener("input", () => {
+    adminData.home = { title: $("#h-title").value, text: $("#h-text").value, announcements: $("#h-ann").value.split("\n").map(x => x.trim()).filter(Boolean).slice(0, 6) };
+    afterEdit();
+  });
+}
+
+/* --- Publish --- */
+async function publishAdmin() {
+  if (adminBusy || !adminLoggedIn()) return;
+  if (!adminToken.get()) { $("#adminConn").scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }); toast("Connect this phone first, then publish"); const k = $("#adminKey"); if (k) k.focus({ preventScroll: true }); return; }
+  if (Object.keys(adminErrors).length) { toast("Fix the highlighted fields first"); return; }
+  const doc = { version: 2, updated: new Date().toISOString(), ...normalizeDoc(adminData) };
+  const before = normalizeDoc(appData), after = normalizeDoc(adminData), what = [];
+  if (JSON.stringify(before.items || {}) !== JSON.stringify(after.items || {})) what.push("stock and products");
+  if (JSON.stringify(before.custom || []) !== JSON.stringify(after.custom || [])) what.push("new products");
+  if (JSON.stringify(before.settings || {}) !== JSON.stringify(after.settings || {})) what.push("settings");
+  if (JSON.stringify(before.home || {}) !== JSON.stringify(after.home || {})) what.push("home page");
+  if (JSON.stringify(before.auth || {}) !== JSON.stringify(after.auth || {})) what.push("admin login");
+  const btn = $("#adminPublish"); adminBusy = true; btn.disabled = true; btn.textContent = "Publishing…";
+  try {
+    const st = await putFile(SRC.path, b64encode(JSON.stringify(doc, null, 2) + "\n"), `App update: ${what.join(", ") || "changes"}`);
+    if (st !== 200) { adminConnErr = ghErrorText(st); adminRepoOk = false; renderAdminConn(); toast("Not published. See the message above."); return; }
+    adminConnErr = ""; adminRepoOk = true;
+    useData(doc); adminSession.set(curAuth().hash); renderAdminLogin(); startAdminData(); renderAdminConn(); renderAdminPanel(); renderAdminBar();
+    toast("Published. Customers see it within a few minutes.");
+  } catch (e) {
+    adminConnErr = NET_ERR; renderAdminConn(); toast("Not published. Check the internet connection.");
+  } finally { adminBusy = false; btn.disabled = false; btn.textContent = "Publish to customers"; }
+}
+
 /* ---------------- State ---------------- */
 let cart = store.get("cart", {});
-for (const id of Object.keys(cart)) { const q = cart[id]; if (!BY_ID[id] || isOut(BY_ID[id]) || !Number.isInteger(q) || q < 1) delete cart[id]; else cart[id] = Math.min(q, MAX_QTY); }
+for (const id of Object.keys(cart)) { const q = cart[id]; if (!BY_ID[id] || BY_ID[id].hidden || isOut(BY_ID[id]) || !Number.isInteger(q) || q < 1) delete cart[id]; else cart[id] = Math.min(q, MAX_QTY); }
 let activeCat = "all", query = "", view = "shop";
 let draft = null;
 
@@ -1473,7 +2195,7 @@ function totals() {
   return { lines, count, sub, fee, total: sub + fee };
 }
 function setQty(id, q, silent) {
-  const p = BY_ID[id]; if (!p || isOut(p)) return;
+  const p = BY_ID[id]; if (!p || p.hidden || isOut(p)) return;
   const before = cart[id] || 0;
   q = Math.max(0, Math.min(MAX_QTY, q));
   if (q === 0) delete cart[id]; else cart[id] = q;
@@ -1513,7 +2235,7 @@ function controlHTML(p) {
   return `<div class="stepper" role="group" aria-label="${esc(p.name)} quantity"><button type="button" data-act="dec" data-id="${p.id}" aria-label="Remove one ${esc(p.name)}">${icon("minus", 18, 2.4)}</button><output aria-live="polite">${q}</output><button type="button" data-act="inc" data-id="${p.id}" aria-label="Add one more ${esc(p.name)}" ${q >= MAX_QTY ? "disabled" : ""}>${icon("plus", 18, 2.4)}</button></div>`;
 }
 function tagHTML(p) {
-  if (isOut(p)) return `<span class="tag warn">Out of season</span>`;
+  if (isOut(p)) return `<span class="tag warn">${esc(p.outLabel || "Out of stock")}</span>`;
   return p.status ? `<span class="tag">${esc(p.status)}</span>` : "";
 }
 function priceHTML(p) {
@@ -1572,18 +2294,26 @@ function updateSchedule() {
 }
 
 /* ---------------- Routing ---------------- */
+let routedOnce = false;
+const scrollMem = {};
 function route() {
   const h = (location.hash || "#shop").slice(1);
-  const next = ["shop", "farm", "visit", "orders", "about"].includes(h) ? h : "shop";
-  const changed = next !== view; view = next;
-  ["shop", "farm", "visit", "orders", "about"].forEach(v => { $("#view-" + v).hidden = v !== view; });
+  const next = ["shop", "farm", "visit", "orders", "about", "admin"].includes(h) ? h : "shop";
+  const changed = next !== view;
+  if (changed) scrollMem[view] = window.scrollY;
+  view = next;
+  if (routedOnce && location.hash && !(history.state && history.state.ammasView)) { try { history.replaceState({ ...(history.state || {}), ammasView: 1 }, ""); } catch (e) { /* ignore */ } }
+  ["shop", "farm", "visit", "orders", "about", "admin"].forEach(v => { $("#view-" + v).hidden = v !== view; });
+  document.documentElement.classList.toggle("view-admin", view === "admin");
+  if (view === "admin") renderAdmin();
   if (view === "farm") renderFarm();
   if (view === "visit") renderVisit();
   document.querySelectorAll("[data-nav]").forEach(a => { if (a.dataset.nav === view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
   if (view === "orders") renderOrders();
   if (view === "about") renderAbout();
   updateBasketUI();
-  if (changed) window.scrollTo(0, 0);
+  if (changed) window.scrollTo(0, scrollMem[view] || 0);
+  routedOnce = true;
 }
 
 /* ---------------- Dialog ---------------- */
@@ -1596,18 +2326,20 @@ function openDialog(kind) {
     lastFocus = document.activeElement; dlgOpen = true;
     wrap.classList.add("open");
     document.documentElement.style.overflow = "hidden"; document.documentElement.classList.add("dlg-on");
-    try { history.pushState({ ammasSheet: 1 }, ""); sheetInHistory = true; } catch (e) { sheetInHistory = false; }
+    pushSheetStep();
+    clearTimeout(toastTimer); $("#toast").classList.remove("show");
     ["#main", ".appbar", "#tabbar", "#cartbar"].forEach(s => { const e = $(s); if (e) e.inert = true; });
     requestAnimationFrame(() => requestAnimationFrame(() => wrap.classList.add("show")));
   }
   updateBasketUI();
 }
-let sheetInHistory = false, skipNextPop = false, pendingHash = null;
+let sheetDepth = 0, skipNextPop = false, pendingHash = null;
+function pushSheetStep() { try { history.pushState({ ammasSheet: sheetDepth + 1 }, ""); sheetDepth++; } catch (e) { /* history unavailable: buttons still work */ } }
 function closeDialog(opts = {}) {
   if (!dlgOpen) return false;
   let wentBack = false;
-  if (sheetInHistory && !opts.fromHistory) { sheetInHistory = false; skipNextPop = true; wentBack = true; history.back(); }
-  else sheetInHistory = false;
+  if (sheetDepth > 0 && !opts.fromHistory) { skipNextPop = true; wentBack = true; history.go(-sheetDepth); }
+  sheetDepth = 0;
   wrap.classList.remove("show"); dlgOpen = false; dlgMode = null;
   ["#main", ".appbar", "#tabbar", "#cartbar"].forEach(s => { const e = $(s); if (e) e.inert = false; });
   document.documentElement.style.overflow = ""; document.documentElement.classList.remove("dlg-on");
@@ -1619,13 +2351,18 @@ function closeDialog(opts = {}) {
 function goAfterClose(hash) { if (closeDialog()) pendingHash = hash; else location.hash = hash; }
 window.addEventListener("popstate", () => {
   if (skipNextPop) { skipNextPop = false; if (pendingHash) { const h = pendingHash; pendingHash = null; location.hash = h; } return; }
-  if (dlgOpen) { sheetInHistory = false; closeDialog({ fromHistory: true }); }
+  if (!dlgOpen) return;
+  sheetDepth = Math.max(0, sheetDepth - 1);
+  if (dlgMode === "checkout" && sheetDepth >= 1) { showBasketStep(); return; }
+  if (sheetDepth > 0) { const n = sheetDepth; sheetDepth = 0; skipNextPop = true; history.go(-n); }
+  closeDialog({ fromHistory: true });
 });
 function setDialog({ title, label, back }) {
   $("#dlgTitle").textContent = title || "";
   if (label) dlg.setAttribute("aria-label", label), dlg.removeAttribute("aria-labelledby");
   else dlg.setAttribute("aria-labelledby", "dlgTitle"), dlg.removeAttribute("aria-label");
   const b = $("#dlgBack"); b.hidden = !back; b.onclick = back || null;
+  $("#dlgClose").hidden = !!(back && back === sheetBack && dlgMode === "basket");
   $("#dlgBody").scrollTop = 0;
 }
 function focusFirst(sel) { setTimeout(() => { const el = sel ? dlg.querySelector(sel) : $("#dlgClose"); (el || $("#dlgClose")).focus({ preventScroll: true }); }, 60); }
@@ -1656,11 +2393,11 @@ function renderDetail(p) {
   const inCart = cart[p.id] || 0, out = isOut(p);
   const minQ = inCart ? 0 : 1;
   let cta;
-  if (out) cta = `<button type="button" class="btn btn-line" disabled>Out of season</button>`;
+  if (out) cta = `<button type="button" class="btn btn-line" disabled>${esc(p.outLabel || "Out of stock")}</button>`;
   else if (detailQty === 0) cta = `<button type="button" class="btn btn-line" id="dq-add">Remove from basket</button>`;
   else if (inCart === detailQty) cta = `<button type="button" class="btn btn-primary" id="dq-add">${icon("check", 18, 2.4)}In basket · ${inr(p.price * detailQty)}</button>`;
   else cta = `<button type="button" class="btn btn-primary" id="dq-add">${inCart ? "Update basket" : "Add to basket"} · ${inr(p.price * detailQty)}</button>`;
-  const ph = PHOTO_OF[p.id];
+  const ph = p.photo ? "" : PHOTO_OF[p.id];
   $("#dlgBody").innerHTML = `<div class="detail">
     ${ph ? `<div class="tile photo"><img src="${PHOTOS[ph]}" alt="${esc(CAPTION[ph])}" width="480" height="640">${tagHTML(p)}<span class="ph-cap">${icon("pin", 14, 2)}Growing on our farm</span></div>` : `<div class="tile">${art(p.id)}${tagHTML(p)}</div>`}
     <div class="detail-info">
@@ -1708,9 +2445,9 @@ function summaryHTML(t) {
 function openBasket() { dlgMode = "basket"; openDialog("drawer"); renderBasket(); focusFirst(); }
 function renderBasket() {
   const t = totals();
-  setDialog({ title: "Your basket" });
+  setDialog({ title: "Your basket", back: sheetBack });
   if (!t.count) {
-    $("#dlgBody").innerHTML = `<div class="empty"><div class="empty-art">${art("tom")}</div><p class="display">Your basket is empty</p><p>Add today's greens, fruit or a jar of ghee to get started.</p></div>`;
+    $("#dlgBody").innerHTML = `<div class="empty"><div class="empty-art">${art("tom")}</div><p class="display">Your basket is empty</p><p>Add today's greens, fruit or masala to get started.</p></div>`;
     $("#dlgFoot").innerHTML = `<button type="button" class="btn btn-primary btn-block" id="keepShopping">Browse the farm</button>`;
     $("#keepShopping").onclick = () => { if (view !== "shop") goAfterClose("#shop"); else closeDialog(); };
     return;
@@ -1726,12 +2463,12 @@ function renderBasket() {
     summaryHTML(t);
   const short = t.sub < CONFIG.minOrder;
   $("#dlgFoot").innerHTML = `${short ? `<p class="warnline">Minimum order is ${inr(CONFIG.minOrder)}. Add ${inr(CONFIG.minOrder - t.sub)} more to continue.</p>` : ""}<button type="button" class="btn btn-primary btn-block" id="toCheckout" ${short ? "disabled" : ""}>Continue to delivery details ${icon("arrow", 18, 2.2)}</button>`;
-  $("#toCheckout").onclick = () => { dlgMode = "checkout"; renderCheckout(); focusFirst("#f-name"); };
+  $("#toCheckout").onclick = () => { dlgMode = "checkout"; pushSheetStep(); renderCheckout(); focusFirst("#f-name"); };
 }
 
 const UPSELL = ["kot", "chl", "lem", "mnt", "gin", "cht", "bas"];
 function upsellHTML() {
-  const list = UPSELL.map(id => BY_ID[id]).filter(x => x && !isOut(x) && !cart[x.id]).slice(0, 3);
+  const list = UPSELL.map(id => BY_ID[id]).filter(x => x && !x.hidden && !isOut(x) && !cart[x.id]).slice(0, 3);
   if (!list.length) return "";
   return `<div class="upsell"><h4>Often added</h4><div class="pair-grid">${list.map(x => `<div class="pair" data-card="${x.id}"><div class="pair-hit"><div class="tile">${art(x.id)}</div><span><b>${esc(x.name)}</b><small>${esc(x.unit)} · ${inr(x.price)}</small></span></div><div class="ctl">${controlHTML(x)}</div></div>`).join("")}</div></div>`;
 }
@@ -1742,7 +2479,7 @@ function renderCheckout() {
   const s = schedule();
   const d = draft || { name: saved.name || "", phone: saved.phone || "", address: saved.address || "", landmark: saved.landmark || "", area: saved.area || "", pincode: saved.pincode || "", slot: CONFIG.slots[0].id, pay: "cash", notes: "", weekly: false, gift: false, from: "", giftNote: "" };
   const weekday = s.day.toLocaleDateString("en-IN", { weekday: "long" });
-  setDialog({ title: "Delivery details", back: () => { draft = readForm(); dlgMode = "basket"; renderBasket(); focusFirst(); } });
+  setDialog({ title: "Delivery details", back: sheetBack });
   $("#dlgBody").innerHTML = `<form class="form" id="coForm" novalidate>
     <label class="toggle"><input type="checkbox" name="gift" id="f-gift" ${d.gift ? "checked" : ""}><span class="sw" aria-hidden="true"></span><span><b>Send as a gift</b><em>We pack it without a bill and add your message. Perfect for festivals.</em></span></label>
     <div class="giftbox" id="giftBox" ${d.gift ? "" : "hidden"}>
@@ -1912,7 +2649,7 @@ function renderOrders() {
 function reorder(i) {
   const o = store.get("orders", [])[i]; if (!o) return;
   let added = 0, skipped = 0;
-  o.items.forEach(it => { const p = BY_ID[it.id]; if (p && !isOut(p)) { cart[it.id] = Math.min(MAX_QTY, (cart[it.id] || 0) + it.qty); added++; } else skipped++; });
+  o.items.forEach(it => { const p = BY_ID[it.id]; if (p && !p.hidden && !isOut(p)) { cart[it.id] = Math.min(MAX_QTY, (cart[it.id] || 0) + it.qty); added++; } else skipped++; });
   store.set("cart", cart); renderCatalog(); updateBasketUI();
   if (added) { openBasket(); }
   toast(skipped ? `${plural(skipped, "item")} out of season, left out` : "Items added to your basket at today's prices");
@@ -2099,7 +2836,7 @@ function renderLibrary() {
   const q = fold(libQuery.trim());
   const list = CROPS.filter(([name, local, g]) => (libGroup === "all" || g === libGroup) && (!q || fold(`${name} ${local}`).includes(q)));
   $("#libGrid").innerHTML = list.length ? list.map(([name, local, g, ph, pid]) => {
-    const p = pid && BY_ID[pid], inShop = p && !isOut(p);
+    const p = pid && BY_ID[pid], inShop = p && !p.hidden && !isOut(p);
     const pic = ph && PHOTOS[ph] ? `<img src="${photoSrc(ph)}" alt="" width="240" height="240" loading="lazy" decoding="async">` : p ? art(p.id) : icon(g === "fruit" || g === "garden" ? "tree" : "sprout", 40, 1.4);
     const tag = inShop ? `<span class="tag gold">In the shop</span>` : p && isOut(p) ? `<span class="tag">Seasonal</span>` : "";
     const act = inShop ? `data-act="open" data-id="${pid}"` : ph && PHOTOS[ph] ? `data-act="photo" data-k="${ph}"` : "";
@@ -2166,7 +2903,7 @@ function renderVisitForm() {
   const d = visitDraft || { name: saved.name || "", phone: saved.phone || "", date: "", people: "3–5", group: "Family with kids", acts: [], note: "" };
   $("#visitBox").innerHTML = `<h2 class="display">Request a weekend visit</h2>
     <form class="form" id="visitForm" novalidate>
-      <fieldset class="fld" data-v="date"><legend class="legend">Choose a Saturday or Sunday</legend>
+      <fieldset class="fld" data-v="date"><legend class="legend">Choose a ${daysList("or")}</legend>
         <div class="dchips" role="radiogroup" aria-label="Visit date">${dates.map(x => { const iso = isoDay(x); return `<label class="dchip"><input type="radio" name="date" value="${iso}" aria-label="${x.toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" })}" ${d.date === iso ? "checked" : ""}><span><small>${x.toLocaleDateString("en-IN", { weekday: "short" })}</small><b>${x.getDate()}</b><small>${x.toLocaleDateString("en-IN", { month: "short" })}</small></span></label>`; }).join("")}</div>
         <div class="err">Choose a date for your visit.</div>
       </fieldset>
@@ -2265,22 +3002,22 @@ function loopSVG() {
 }
 
 /* ---------------- Announcement bar ---------------- */
-const announcements = () => [
+const announcements = () => HOME.announcements.length ? HOME.announcements : [
   isCertified() ? `${certLabel()} · No chemical fertilisers` : `${certLabel()} · NPOP organic standard`,
-  `Farm visits every Saturday and Sunday`,
+  `Farm visits every ${daysList("and")}`,
   `Order by ${hourLabel(CONFIG.cutoffHour)} for next-day delivery`,
   `Free delivery on orders above ${inr(CONFIG.freeDeliveryAbove)}`,
   `Our crops grow to the sound of mantras`
 ];
 let anncIdx = 0;
 function startAnnouncements() {
-  const el = $("#annc"), txt = $("#anncText"), list = announcements();
-  txt.textContent = list[0];
+  const el = $("#annc"), txt = $("#anncText");
+  txt.textContent = announcements()[0];
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   setInterval(() => {
     if (document.hidden) return;
     el.classList.add("fade");
-    setTimeout(() => { anncIdx = (anncIdx + 1) % list.length; txt.textContent = list[anncIdx]; el.classList.remove("fade"); }, 350);
+    setTimeout(() => { const list = announcements(); anncIdx = (anncIdx + 1) % list.length; txt.textContent = list[anncIdx]; el.classList.remove("fade"); }, 350);
   }, 4500);
 }
 
@@ -2315,7 +3052,7 @@ $("#basketBtn").addEventListener("click", openBasket);
 $("#cartbarBtn").addEventListener("click", openBasket);
 window.addEventListener("hashchange", () => { if (dlgOpen) closeDialog({ fromHistory: true }); route(); });
 window.addEventListener("storage", e => { if (e.key === "ammasfarm.v2.cart") { cart = store.get("cart", {}); renderCatalog(); updateBasketUI(); } });
-document.addEventListener("visibilitychange", () => { if (!document.hidden) updateSchedule(); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden) { updateSchedule(); refreshStock(); } });
 
 /* ---------------- Native app shell (iOS / Android via Capacitor) ---------------- */
 const IS_NATIVE = !!(window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" && window.Capacitor.isNativePlatform());
@@ -2327,6 +3064,75 @@ if (IS_NATIVE) {
     if (/^(https?:|tel:|mailto:|whatsapp:)/i.test(href)) { e.preventDefault(); window.location.href = href; }
   }, true);
 }
+
+/* ---------------- Back navigation: Android back button, swipe gestures, sheet history ---------------- */
+// Each sheet step (basket, checkout) owns one browser-history entry, so every "back" (Android button,
+// iOS swipe, browser back, the ← button) steps back one screen instead of leaving the app.
+function sheetBack() {
+  if (!dlgOpen) return false;
+  if (sheetDepth > 0) history.back();
+  else if (dlgMode === "checkout") showBasketStep();
+  else closeDialog();
+  return true;
+}
+function showBasketStep() { draft = readForm(); dlgMode = "basket"; renderBasket(); focusFirst(); }
+function appBack() {
+  if (sheetBack()) return true;
+  if (view !== "shop") { if (history.state && history.state.ammasView) history.back(); else { history.replaceState(null, "", "#shop"); route(); } return true; }
+  return false;
+}
+// Android hardware / gesture back (needs @capacitor/app in the native build)
+let lastBackPress = 0;
+(function wireAndroidBack() {
+  const App = IS_NATIVE && window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+  if (!App || typeof App.addListener !== "function") return;
+  App.addListener("backButton", () => {
+    if (appBack()) return;
+    if (window.scrollY > 400) { window.scrollTo({ top: 0, behavior: reduceMotion() ? "auto" : "smooth" }); return; }
+    const now = Date.now();
+    if (now - lastBackPress < 2000) { App.exitApp(); return; }
+    lastBackPress = now; toast("Press back again to exit");
+  });
+})();
+// Swipe down on a bottom sheet to close it (phones)
+(function wireSheetSwipe() {
+  const mq = matchMedia("(max-width:720px)");
+  let startY = 0, startX = 0, dy = 0, dragging = false, decided = false;
+  dlg.addEventListener("touchstart", e => {
+    if (!mq.matches || e.touches.length !== 1) return;
+    const t = e.target;
+    if (t.closest("input,textarea,select,.pair-grid,.dchips,.chips,.gallery")) return;
+    const body = $("#dlgBody");
+    if (!t.closest(".dlg-h") && body.scrollTop > 0) return;
+    startY = e.touches[0].clientY; startX = e.touches[0].clientX; dy = 0; dragging = true; decided = false;
+  }, { passive: true });
+  dlg.addEventListener("touchmove", e => {
+    if (!dragging) return;
+    const y = e.touches[0].clientY, x = e.touches[0].clientX;
+    if (!decided) { if (Math.abs(y - startY) < 8 && Math.abs(x - startX) < 8) return; decided = true; if (y < startY || Math.abs(x - startX) > Math.abs(y - startY)) { dragging = false; return; } }
+    dy = Math.max(0, y - startY);
+    dlg.style.transition = "none"; dlg.style.transform = `translateY(${dy}px)`;
+  }, { passive: true });
+  const end = () => {
+    if (!dragging) return; dragging = false;
+    dlg.style.transition = ""; dlg.style.transform = "";
+    if (dy > 110) sheetBack();
+  };
+  dlg.addEventListener("touchend", end); dlg.addEventListener("touchcancel", end);
+})();
+// Swipe right from the left edge to go back (iPhone app and home-screen app, where Safari's own swipe isn't available)
+(function wireEdgeSwipe() {
+  const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const standalone = navigator.standalone === true || matchMedia("(display-mode: standalone)").matches;
+  if (!iOS || !(IS_NATIVE || standalone)) return;
+  let sx = 0, sy = 0, active = false;
+  document.addEventListener("touchstart", e => { const t = e.touches[0]; active = e.touches.length === 1 && t.clientX < 24; sx = t.clientX; sy = t.clientY; }, { passive: true });
+  document.addEventListener("touchend", e => {
+    if (!active) return; active = false;
+    const t = e.changedTouches[0];
+    if (t.clientX - sx > 80 && Math.abs(t.clientY - sy) < 60) appBack();
+  }, { passive: true });
+})();
 
 /* ---------------- Init ---------------- */
 $("#basketIcon").outerHTML = icon("basket", 20, 2);
@@ -2354,7 +3160,7 @@ $("#factIc2").outerHTML = icon("truck", 24);
 $("#factIc3").outerHTML = icon("wallet", 24);
 document.querySelectorAll("[data-ic]").forEach(el => { el.outerHTML = icon(el.dataset.ic, 22); });
 $("#yr").textContent = new Date().getFullYear();
-$("#feeFact").textContent = `Delivery ${inr(CONFIG.deliveryFee)}, free above ${inr(CONFIG.freeDeliveryAbove)}`;
+applyHomeAndText();
 document.querySelectorAll("[data-ic3]").forEach(el => { el.innerHTML = icon(el.dataset.ic3, 22); });
 $("#anncIc").outerHTML = icon("seal", 16);
 $("#loopArt").innerHTML = loopSVG();
@@ -2367,6 +3173,8 @@ if (CONFIG.googleReviews) $("#reviewsBtn").href = CONFIG.googleReviews; else $("
 startAnnouncements();
 renderChips(); renderCatalog(); updateSchedule(); route();
 setInterval(updateSchedule, 30000);
+refreshStock();
+setInterval(refreshStock, 180000);
 </script>
 </body>
 </html>
